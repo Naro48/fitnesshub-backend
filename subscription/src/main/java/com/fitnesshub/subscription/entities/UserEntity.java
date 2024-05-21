@@ -8,11 +8,13 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
     private String username;

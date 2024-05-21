@@ -10,6 +10,7 @@ import org.apache.catalina.User;
 import java.util.Date;
 
 @Entity
+@Table
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
