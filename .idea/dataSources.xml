@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="auth_db" uuid="afb26ae0-38bb-4924-a636-608191de0e5a">
+    <data-source source="LOCAL" name="subscription_db@localhost" uuid="aad72642-747f-4afc-b68e-0f77660e3f6d">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/subscription/src/main/resources/application.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/auth_db</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/subscription_db</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
@@ -14,13 +16,12 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="subscription_db@localhost" uuid="aad72642-747f-4afc-b68e-0f77660e3f6d">
+    <data-source source="LOCAL" name="auth_db@localhost" uuid="5b11cae9-27eb-4f9e-8c80-3d1ff8d41e06">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
-      <remarks>$PROJECT_DIR$/subscription/src/main/resources/application.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/subscription_db</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/auth_db</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />

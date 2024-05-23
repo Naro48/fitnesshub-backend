@@ -19,11 +19,16 @@ public class SubscriptionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String title;
+
     private Date startDate;
     private Date endDate;
 
     @Enumerated(EnumType.STRING)
     private SubscriptionStatus status;
+
+    @ManyToOne
+    private SubscriptionPlan subscriptionPlan;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

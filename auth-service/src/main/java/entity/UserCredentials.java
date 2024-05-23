@@ -7,18 +7,20 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "users")
+@Table
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserCredentials {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private int id ;
-
+    @Column
     private String username ;
+    @Column
     private String password ;
-
+    @Column
     private String email ;
 
 }
