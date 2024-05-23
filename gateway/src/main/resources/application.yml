@@ -10,8 +10,6 @@ spring:
             uri : lb://SUBSCRIPTION
             predicates:
               - Path =/subscription/**
-            filters:
-              - AuthenticationFilter
 
           - id: auth-service
             uri : lb://AUTH-SERVICE

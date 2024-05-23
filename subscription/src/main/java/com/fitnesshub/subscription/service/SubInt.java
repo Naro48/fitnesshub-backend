@@ -11,4 +11,8 @@ public interface SubInt {
     public void unsubscribe(SubscriptionEntity subscription);
 
     public void changeSubscription(SubscriptionEntity subscription , SubscriptionPlan plan);
+
+    public String getToken(String authorizationHeader);
+
+    public UserEntity getUserFromToken(String token);
 }

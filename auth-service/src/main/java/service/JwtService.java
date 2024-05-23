@@ -1,16 +1,19 @@
 package service;
+import entity.UserCredentials;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -52,6 +55,28 @@ public class JwtService {
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
+    }
+
+    public UserCredentials getUserFromToken(String token) {
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(getSignKey())
+                    .parseClaimsJws(token)
+                    .getBody();
+
+            String username = claims.get("username", String.class);
+            int userId = claims.get("id", Integer.class);
+            String email = claims.get("email", String.class);
+
+            UserCredentials user = new UserCredentials();
+            user.setId(userId);
+            user.setUsername(username);
+            user.setEmail(email);
+
+            return user;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     private Claims extractAllClaims(String token) {

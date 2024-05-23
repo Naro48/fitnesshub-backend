@@ -17,6 +17,7 @@ public class UserEntity {
     private Long id;
 
     private String username;
+
     private String email;
 
     @Enumerated(EnumType.STRING)
